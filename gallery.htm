@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery | Gallery Practice</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){});
+	</script>
+	<style type="text/css">
+		*{
+			box-sizing:border-box;
+		}
+		.showroom{
+			height:400px;
+			text-align:center;
+		}
+		.showroom>img{
+			max-width:100%;max-height:400px;
+		}
+		.showroom>img:not(:first-child){
+			display:none;
+		}
+		hr{
+			margin:20px auto;height:1px;background-color:#888888;
+		}
+		.list{
+			text-align:center;
+		}
+		.list>button{
+			font-size:2em;border:none;background-color:#ffffff;
+			vertical-align:middle;cursor:pointer;
+		}
+		.list>.scroller{
+			display:inline-block;width:600px;
+			vertical-align:middle;
+		}
+		.list>.scroller>img{
+			width:180px;margin:0px 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="showroom" class="showroom">
+		<img src="1.jpg" />
+		<img src="2.jpg" />
+		<img src="3.jpg" />
+		<img src="4.jpg" />
+	</div>
+	<hr/>
+	<div id="list" class="list">
+		<button id="left">&lt;</button>
+		<div class="scroller">
+			<img src="1.jpg" /><!--
+			--><img src="2.jpg" /><!--
+			--><img src="3.jpg" /><!--
+			--><img src="4.jpg" />
+		</div>
+		<button id="right">&gt;</button>
+	</div>
+</body>
+</html>
