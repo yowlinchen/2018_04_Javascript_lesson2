@@ -2,7 +2,17 @@
 <html lang="en">
 <head>
     <title>Menu</title>
-    <script></script>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+        // ready is jQuery event
+        $(document).ready(function(){
+            $(".menu>.title").on("click",function(){
+                // when click on title, do some executions
+                // native code is "nextSibling"
+                $(this).next().toggle();
+            });
+        });
+    </script>
     <style>
         .menu {
             margin-bottom:10px;
