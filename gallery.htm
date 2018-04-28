@@ -34,7 +34,7 @@
 		}
 		.list>.scroller{
 			display:inline-block;width:600px;
-			vertical-align:middle;
+			vertical-align:middle;white-space:nowrap;
 		}
 		.list>.scroller>img{
 			width:180px;margin:0px 10px;
@@ -51,6 +51,10 @@
 	<hr/>
 	<div id="list" class="list">
 		<button id="left">&lt;</button>
+		<!-- Scroler takes 600px -->
+		<!-- every picture including margin:200px -->
+		<!-- current situation is that when there is extra picture will fall off -->
+		<!-- 1. First take is to not that picture fall off -->
 		<div class="scroller">
 			<img src="1.jpg" /><!--
 			--><img src="2.jpg" /><!--
