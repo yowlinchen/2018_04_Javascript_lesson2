@@ -43,7 +43,7 @@
 		function scrollList(step){
 			let left=$(".scroller").scrollLeft();
 			// alert(left);
-			$(".scroller").scrollLeft(left+200*step);
+			$(".scroller").animate({scrollLeft:left+200*step});
 		}
 	</script>
 </head>
