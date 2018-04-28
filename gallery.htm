@@ -36,7 +36,10 @@
 			white-space:nowrap;overflow:hidden;
 		}
 		.list>.scroller>img{
-			width:180px;margin:0px 10px;
+			width:180px;margin:0px 10px;opacity:0.25;
+		}
+		.list>.scroller>img.current {
+			opacity:1;
 		}
 	</style>
 	<script>
@@ -46,8 +49,12 @@
 				// alert(index);
 				// only show the ones i get the index from.  Hide the rest
 				$("#showroom>img").hide(); // hide everything
+				// get ride off all the images current seting
+				$(".scroller>img").removeClass("current");
 				// show the one i want
 				$("#showroom>img:nth-child("+index+")").fadeIn();
+				// Use this to add teh current setting to the "click" small picture
+				$(this).addClass("current");
 				
 			});
 		});
@@ -75,7 +82,7 @@
 
 		<!-- data-* means user defined attributes -->
 		<div class="scroller">
-			<img src="1.jpg" data-index="1"/><!--
+			<img class="current" src="1.jpg" data-index="1"/><!--
 			--><img src="2.jpg" data-index="2"/><!--
 			--><img src="3.jpg" data-index="3"/><!--
 			--><img src="4.jpg" data-index="4"/>
