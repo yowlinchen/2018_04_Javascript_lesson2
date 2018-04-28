@@ -5,9 +5,6 @@
 	<meta name="viewport" content="initial-scale=1.0">
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){});
-	</script>
 	<style type="text/css">
 		*{
 			box-sizing:border-box;
@@ -41,6 +38,13 @@
 			width:180px;margin:0px 10px;
 		}
 	</style>
+	<script>
+		$(document).ready(function(){});
+		function scrollList(step){
+			let left=$(".scroller").scrollLeft();
+			alert(left);
+		}
+	</script>
 </head>
 <body>
 	<div id="showroom" class="showroom">
@@ -51,7 +55,7 @@
 	</div>
 	<hr/>
 	<div id="list" class="list">
-		<button id="left">&lt;</button>
+		<button id="left" onclick="scrollList(-1)">&lt;</button>
 		<!-- Scroler takes 600px -->
 		<!-- every picture including margin:200px -->
 		<!-- current situation is that when there is extra picture will fall off -->
@@ -62,7 +66,7 @@
 			--><img src="3.jpg" /><!--
 			--><img src="4.jpg" />
 		</div>
-		<button id="right">&gt;</button>
+		<button id="right" onclick="scrollList(1)">&gt;</button>
 	</div>
 </body>
 </html>
