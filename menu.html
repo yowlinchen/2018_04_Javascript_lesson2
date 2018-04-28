@@ -15,6 +15,10 @@
                 $(this).next().fadeToggle();
             });
         });
+        function check() {
+            let gender =$("#gender").val();
+            alert(gender);
+        }
     </script>
 
     <style>
@@ -35,9 +39,10 @@
 <body>
     <select id="gender" style="width:200px">
         <option>Sex</option>
-        <option>Male</option>
-        <option>Female</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
     </select>
+    <button onclick="check()">Check</button>
    <div class="menu">
        <div class="title">Menu 1</div>
        <div class="items">
