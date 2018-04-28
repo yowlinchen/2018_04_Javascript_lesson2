@@ -8,7 +8,7 @@
     <script>
         // ready is jQuery event
         $(document).ready(function(){
-            $("#gender").chosen();
+            $("#gender").chosen({disable_search_threshold: 10});
             $(".menu>.title").on("click",function(){
                 // when click on title, do some executions
                 // native code is "nextSibling"
@@ -33,7 +33,7 @@
     </style>
 </head>
 <body>
-    <select id="gender">
+    <select id="gender" style="width:200px">
         <option>Sex</option>
         <option>Male</option>
         <option>Female</option>
