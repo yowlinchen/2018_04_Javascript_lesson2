@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="./chosen_v1.8.5/chosen.min.css">
     <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./chosen_v1.8.5/chosen.jquery.min.js"></script>
     <script>
         // ready is jQuery event
         $(document).ready(function(){
+            $("#gender").chosen();
             $(".menu>.title").on("click",function(){
                 // when click on title, do some executions
                 // native code is "nextSibling"
@@ -13,6 +16,7 @@
             });
         });
     </script>
+
     <style>
         .menu {
             margin-bottom:10px;
@@ -29,6 +33,11 @@
     </style>
 </head>
 <body>
+    <select id="gender">
+        <option>Sex</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
    <div class="menu">
        <div class="title">Menu 1</div>
        <div class="items">
