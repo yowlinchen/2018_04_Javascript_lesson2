@@ -16,6 +16,7 @@
 		.showroom>img{
 			max-width:100%;max-height:400px;
 		}
+		/* except the first image, hide the rest */
 		.showroom>img:not(:first-child){
 			display:none;
 		}
@@ -39,7 +40,17 @@
 		}
 	</style>
 	<script>
-		$(document).ready(function(){});
+		$(document).ready(function(){
+			$(".scroller>img").on("click",function(){
+				let index=$(this).attr("data-index");
+				// alert(index);
+				// only show the ones i get the index from.  Hide the rest
+				$("#showroom>img").hide(); // hide everything
+				// show the one i want
+				$("#showroom>img:nth-child("+index+")").fadeIn();
+				
+			});
+		});
 		function scrollList(step){
 			let left=$(".scroller").scrollLeft();
 			// alert(left);
@@ -61,11 +72,13 @@
 		<!-- every picture including margin:200px -->
 		<!-- current situation is that when there is extra picture will fall off -->
 		<!-- 1. First take is to not that picture fall off -->
+
+		<!-- data-* means user defined attributes -->
 		<div class="scroller">
-			<img src="1.jpg" /><!--
-			--><img src="2.jpg" /><!--
-			--><img src="3.jpg" /><!--
-			--><img src="4.jpg" />
+			<img src="1.jpg" data-index="1"/><!--
+			--><img src="2.jpg" data-index="2"/><!--
+			--><img src="3.jpg" data-index="3"/><!--
+			--><img src="4.jpg" data-index="4"/>
 		</div>
 		<button id="right" onclick="scrollList(1)">&gt;</button>
 	</div>
